@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tetris</title>
+    <style>
+      body {
+        background: #202028;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 2em;
+        /* text-align: center; */
+      }
+      canvas {
+        border: double .2em #fff;
+        height: 90vh;
+      }
+      #game{
+        display: flex;
+        flex-direction: column;
+      }
+      #playbutton{
+
+      }
+      button{
+        background-color: white;
+        height: 15vw;
+        font-size: 3vw;
+        padding: 0 auto;
+      }
+      #buttondiv{
+        display: flex;
+        flex-direction : row;
+      }
+      #buttondiv button{
+        flex: 1;
+      }
+      @media (min-width: 1000px){
+        #buttondiv {
+          visibility: hidden;
+        }
+      }
+      @media (min-width: 200px) and (max-width: 450px){
+        #tetris {
+          width: 180px;
+          height: 300px;
+        }
+      }
+    </style>
+</head>
+<body>
+  <section id="game">
+    <div id="board">
+      <div>점수: <span id="score"></span></div>
+      <canvas id="tetris" width="240" height="400"></canvas>
+      <button id="playbutton" onclick = "gameplay()">Gameplay!</button>
+    </div>
+    <div id="buttondiv">
+      <button onclick="playerMove(-1)">L</button>
+      <button onclick="playerHarddrop()">O</button>
+      <button onclick="playerMove(1)">R</button>
+    </div>
+  </section>
+
+  <script type="text/javascript" src = "tetris.js"></script>
+  <script type="text/javascript" src = "const.js"></script>
+</body>
+</html>
